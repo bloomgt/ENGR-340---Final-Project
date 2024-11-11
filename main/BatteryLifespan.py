@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import scipy
 
-#Import Files
+#File Selection
 files = [""]
 fileselect = files[]
 path = "../../../data/" + fileselect
