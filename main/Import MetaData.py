@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 
-path_to_dir = "data/"
-metadata_path = "metadata.csv"
 
 file_path = path_to_dir + metadata_path
 
