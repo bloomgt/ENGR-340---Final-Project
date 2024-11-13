@@ -31,4 +31,3 @@ for id in battery_names:
     move_to = "data/batteries/" + id
     for file in csv_array:
         shutil.move(file_dir + file, move_to)
-
