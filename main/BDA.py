@@ -24,16 +24,20 @@ for file in files:
     time_data.append(file_data[-1,-1])
 
 
-plt.title("Max Voltage per Cycle of " + battery_names[test_battery])
-plt.plot(voltage_data, label="Volts [V]")
-plt.legend()
-plt.show()
+fig, axs = plt.subplots(1,2, figsize =(15,5))
+
+axs[0].set_title("Max Voltage per Cycle of " + battery_names[test_battery])
+axs[0].plot(voltage_data, label="Volts [V]")
+axs[0].legend()
 
 numbers = np.arange(0,len(time_data))
 slope, intercept = np.polyfit(numbers, time_data, deg=1)
 best_fit = numbers*slope + intercept
-plt.title("Time to Discharge per Cycle of " + battery_names[test_battery])
-plt.plot(time_data, label="Time [s]")
-plt.plot(best_fit, label="Linear Approx")
-plt.legend()
+
+axs[1].set_title("Time to Discharge per Cycle of " + battery_names[test_battery])
+axs[1].plot(time_data, label="Time [s]")
+axs[1].plot(best_fit, label="Linear Approx")
+axs[1].legend()
+
+plt.tight_layout()
 plt.show()
