@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 file_path = path_to_dir + metadata_path
 
 df = pd.read_csv(file_path, header=0)
