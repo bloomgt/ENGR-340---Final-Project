@@ -4,7 +4,11 @@ import os
 import shutil
 
 file_path = "data/metadata.csv"
+
+file_path = path_to_dir + metadata_path
+
 df = pd.read_csv(file_path, header=0)
+
 battery_names = np.unique(df['battery_id'])
 
 dict = {}
