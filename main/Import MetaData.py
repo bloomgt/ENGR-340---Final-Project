@@ -4,14 +4,10 @@ import os
 import shutil
 
 file_path = "data/metadata.csv"
-
-
 df = pd.read_csv(file_path, header=0)
-
 battery_names = np.unique(df['battery_id'])
 
 dict = {}
-
 
 try:
     os.mkdir ("data/batteries")
@@ -25,8 +21,7 @@ for id in battery_names:
     try:
         os.mkdir("data/batteries/" + id)
     except:
-        print("Sub-directory already created.")
-
+        print()
     file_dir = "data/data/"
     move_to = "data/batteries/" + id
     for file in csv_array:
