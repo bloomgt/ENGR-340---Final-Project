@@ -37,10 +37,10 @@ for test_battery in battery_names:
 
     fig, axs = plt.subplots(1,2, figsize =(15,5))
 
-    axs[0].set_title("Max Voltage per Cycle of " + battery_names[test_battery])
+    axs[0].set_title("Max Voltage per Cycle of " + test_battery)
     axs[0].plot(voltage_data, label="Volts [V]")
     axs[0].legend()
-    axs[1].set_title("Time to Discharge per Cycle of " + battery_names[test_battery])
+    axs[1].set_title("Time to Discharge per Cycle of " + test_battery)
     axs[1].plot(time_data, label="Time [s]")
     axs[1].plot(best_fit, label="Linear Approx")
     axs[1].legend()
