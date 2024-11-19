@@ -36,6 +36,7 @@ for test_battery in battery_names:
 
 
     fig, axs = plt.subplots(1,2, figsize =(15,5))
+
     axs[0].set_title("Max Voltage per Cycle of " + battery_names[test_battery])
     axs[0].plot(voltage_data, label="Volts [V]")
     axs[0].legend()
@@ -46,3 +47,4 @@ for test_battery in battery_names:
     plt.tight_layout()
     plt.show()
 
+dummy = 1
