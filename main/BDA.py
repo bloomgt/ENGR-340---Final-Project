@@ -9,13 +9,11 @@ import os
 # Including max charge voltage and total discharge time
 #
 
-
 # Create list of every battery in entire dataset
 metadata_path = "data/metadata.csv"
 df = pd.read_csv(metadata_path, header=0)
 battery_names = np.unique(df['battery_id'])
 
-# Look at each battery in the data set
 for test_battery in battery_names:
 
     # Create list to store data we are interested in for
@@ -50,6 +48,7 @@ for test_battery in battery_names:
     # Plot the max voltage per cycle and time to discharge per cycle
     # For the current battery we are looking at
     fig, axs = plt.subplots(1,2, figsize =(15,5))
+
     axs[0].set_title("Max Voltage per Cycle of " + test_battery)
     axs[0].plot(voltage_data, label="Volts [V]")
     axs[0].legend()
