@@ -5,8 +5,6 @@ import os
 #
 # Basic Discharge Analysis
 #
-# November 13, 2024
-# Bloom, Hamilton
 #
 
 #test_battery = 15
@@ -14,8 +12,6 @@ metadata_path = "data/metadata.csv"
 df = pd.read_csv(metadata_path, header=0)
 battery_names = np.unique(df['battery_id'])
 
-
-print("There are ", len(battery_names), " batteries to be analyzed.")
 
 for test_battery in battery_names:
     voltage_data = list()
