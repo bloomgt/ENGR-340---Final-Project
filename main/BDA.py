@@ -15,7 +15,7 @@ df = pd.read_csv(metadata_path, header=0)
 battery_names = np.unique(df['battery_id'])
 
 
-print(len(battery_names))
+print("There are ", len(battery_names), " batteries to be analyzed.")
 
 for test_battery in battery_names:
     voltage_data = list()
