@@ -9,7 +9,6 @@ import os
 # Bloom, Hamilton
 #
 
-
 #test_battery = 15
 metadata_path = "data/metadata.csv"
 df = pd.read_csv(metadata_path, header=0)
@@ -28,6 +27,7 @@ for test_battery in battery_names:
         file_data = np.loadtxt(file_path, delimiter=",", skiprows=1)
         voltage_data.append(max(file_data[:,0]))
         time_data.append(file_data[-1,-1])
+
 
     numbers = np.arange(0,len(time_data))
     slope, intercept = np.polyfit(numbers, time_data, deg=1)
