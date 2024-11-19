@@ -38,6 +38,10 @@ for test_battery in battery_names:
         voltage_data.append(max(file_data[:,0]))
         time_data.append(file_data[-1,-1])
 
+
+    # Difference per cycle
+    ddt = np.diff(time_data)
+
     # Create line of best fit for the time to discharge data
     numbers = np.arange(0,len(time_data))
     slope, intercept = np.polyfit(numbers, time_data, deg=1)
@@ -57,6 +61,7 @@ for test_battery in battery_names:
     axs[1].plot(best_fit, label="Linear Approx")
     axs[1].legend()
     plt.tight_layout()
-    plt.show()
+    fig.savefig("data/analysis/BDA Plots/" + test_battery + "-BDA.jpeg")
+
 
     # Move on to next battery and repeat
