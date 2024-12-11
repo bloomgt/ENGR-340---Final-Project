@@ -3,29 +3,35 @@ import numpy as np
 import os
 import shutil
 
+
+# Create Dataframe with all metadata data
 file_path = "data/metadata.csv"
-
-file_path = path_to_dir + metadata_path
-
 df = pd.read_csv(file_path, header=0)
 
+# Create list of each battery name
 battery_names = np.unique(df['battery_id'])
 
-dict = {}
-
+# Create folders to store battery data
 try:
     os.mkdir ("data/batteries")
 except:
     print("Directories already created.")
 
+
+# Look at each unique Battery ID
 for id in battery_names:
-    data = df[df['battery_id'] == id]
-    csv_array = data['filename'].to_numpy()
-    dict[id] = csv_array
+
+    # Store csv file names in the dictionary
+    data = df[df['battery_id'] == id]           # Create sub-dataframe for current unique Battery ID
+    csv_array = data['filename'].to_numpy()     # Grab all csv file names
+
+    # Create sub-directory for the current unique Battery ID
     try:
         os.mkdir("data/batteries/" + id)
     except:
-        print()
+        print("Sub-directory already created.")
+
+    # Move each associated csv files into new subdirectory
     file_dir = "data/data/"
     move_to = "data/batteries/" + id
     for file in csv_array:
