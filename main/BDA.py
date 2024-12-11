@@ -39,6 +39,8 @@ for test_battery in battery_names:
         time_data.append(file_data[-1,-1])
 
 
+
+
     # Difference per cycle
     ddt = np.diff(time_data)
 
@@ -47,7 +49,7 @@ for test_battery in battery_names:
     slope, intercept = np.polyfit(numbers, time_data, deg=1)
     best_fit = numbers*slope + intercept
 
-    print(f"Lifetime reduction per cycle (seconds): {abs(slope)}")
+    print(f"Battery {test_battery}: Lifetime reduction per cycle (seconds): {abs(slope)}")
 
     # Plot the max voltage per cycle and time to discharge per cycle
     # For the current battery we are looking at
