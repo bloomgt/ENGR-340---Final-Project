@@ -23,7 +23,7 @@ The other shows the total battery discharge time across many different cycles.
 These charts help to answer our questions about the battery conditions and how quickly they degrade based on those conditions.
 See the chart below for a one result for a given battery:
 
-ENGR-340---Final-Project/main/data/analysis/BDA Plots/B0005-BDA.jpeg
+![Image 1](main/data/analysis/BDA Plots/B0005-BDA.jpeg)
 
 ### 1.2 Discharge Power Lifespan
 The Discharge Power Lifespan works through our chosen datasets and determines the degradation values.
