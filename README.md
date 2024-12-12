@@ -23,7 +23,7 @@ The other shows the total battery discharge time across many different cycles.
 These charts help to answer our questions about the battery conditions and how quickly they degrade based on those conditions.
 See the chart below for a one result for a given battery:
 
-![Image 1](main/data/analysis/BDA Plots/B0005-BDA.jpeg)
+![alt text](https://github.com/bloomgt/ENGR-340---Final-Project/blob/main/main/data/analysis/BDA%20Plots/B0005-BDA.jpeg)
 
 ### 1.2 Discharge Power Lifespan
 The Discharge Power Lifespan works through our chosen datasets and determines the degradation values.
@@ -61,16 +61,16 @@ Discharge Power Lifespan outputs a print statement, nothing needed to be done he
 From the testing, three different types of results were generated.
 First, the BDA generated a plot similar to the one below for all of the batteries:
 
-*BDA Plot*
+![alt text](https://github.com/bloomgt/ENGR-340---Final-Project/blob/main/main/data/analysis/BDA%20Plots/B0005-BDA.jpeg)
 
 From the Discharge Power Lifespan, the following results were generated:
 
-*DPL results*
+![alt text](https://github.com/NJ365/ENGR-340---Final-Project/blob/main/main/data/analysis/DischargeTimeReductionResults.png)
 
 Finally, from the Rate of Voltage Drop, a unique plot was created for each discharge test for every battery.
 These charts helped to visualize how the voltage changes during a discharge test and whether they are linear or exponential.
 
-*ROVD Plot*
+![alt text](https://github.com/bloomgt/ENGR-340---Final-Project/blob/main/main/data/analysis/ROVD%20Plot/B0036/%20Cycle%20103-ROVD.jpeg)
 
 ## 4 Limitations
 These functions are relatively limited as they focus on setting up the data for being processed and then producing plots that can be analyzed.
