@@ -12,6 +12,7 @@ import os
 metadata_path = "data/metadata.csv"
 df = pd.read_csv(metadata_path, header=0)
 battery_names = np.unique(df['battery_id'])
+corr_array = []
 
 #For each battery
 for test_battery in battery_names:
@@ -43,21 +44,31 @@ for test_battery in battery_names:
 
         # Create a directory for the Rate of Voltage Drop Plots
         file_dir = "data/analysis/ROVD Plot/" + test_battery
+
         try:
             os.mkdir(file_dir)
         except:
             print("Sub-directory already created")
-
 
         # Plot the battery voltage over time of discharging
         # For the current battery we are looking at and save
         plt.clf()
         plt.title("Voltage Drop over Time of " + test_battery + " Cycle: " + str(cycle))
         plt.plot( time_data, voltage_data, label="Volts [V]")
+        plt.xlabel("Time (s)")
+        plt.ylabel("Voltage [V]")
         plt.legend()
         plt.savefig(file_dir + "/ Cycle " + str(cycle) + "-ROVD.jpeg")
 
+        # Determine the correlation coefficient for a given cycle test
+        correlation = np.corrcoef(voltage_data, time_data)[0,1]
+        corr_array.append(correlation) # Save values for later
+
+
         # Increment cycle count
         cycle += 1
+
+    # Print out the average correlation coefficient for the given battery
+    print(test_battery + ": " + str(round(np.average(corr_array), 4)))
 
     # Move on to next battery and repeat
