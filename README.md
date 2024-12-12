@@ -65,7 +65,7 @@ First, the BDA generated a plot similar to the one below for all of the batterie
 
 From the Discharge Power Lifespan, the following results were generated:
 
-*DPL results*
+![alt text](https://github.com/NJ365/ENGR-340---Final-Project/blob/main/main/data/analysis/DischargeTimeReductionResults.png)
 
 Finally, from the Rate of Voltage Drop, a unique plot was created for each discharge test for every battery.
 These charts helped to visualize how the voltage changes during a discharge test and whether they are linear or exponential.
